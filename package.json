@@ -1,0 +1,18 @@
+{
+  "name": "explainmymedicalreport",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\""
+  },
+  "dependencies": {
+    "axios": "^1.13.6",
+    "lucide-react": "^1.7.0",
+    "react-dropzone": "^15.0.0",
+    "react-router-dom": "^7.13.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "tailwindcss": "^4.2.2",
+    "concurrently": "^8.2.2"
+  }
+}

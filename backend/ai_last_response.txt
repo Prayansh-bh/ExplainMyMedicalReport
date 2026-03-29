@@ -1,0 +1,29 @@
+{
+  "report_metadata": {
+    "lab_name": "DRIOGY PATHOLOGY LAB",
+    "report_title": "MYCOBACTERIUM COMBINED PANEL - TB (COMBINE)",
+    "patient_identifiers_found": true
+  },
+  "extracted_parameters": [
+    {
+      "test_name": "Mycobacterium tuberculosis Complex",
+      "result": "Detected",
+      "unit": null,
+      "reference_range": null,
+      "is_abnormal": true
+    },
+    {
+      "test_name": "Non tuberculous Mycobacteria",
+      "result": "Not detected",
+      "unit": null,
+      "reference_range": null,
+      "is_abnormal": false
+    }
+  ],
+  "user_requested_check": {
+    "hemoglobin_found": false,
+    "vitamin_d_found": false,
+    "explanation": "Requested parameter Hemoglobin is NOT present in this specific report. Requested parameter Vitamin D3 is NOT present in this specific report."
+  },
+  "summary": "The Mycobacterium Combined Panel - TB (COMBINE) report indicates Mycobacterium tuberculosis Complex was detected, while Non tuberculous Mycobacteria was not detected."
+}

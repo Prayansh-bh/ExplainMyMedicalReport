@@ -8,7 +8,22 @@ import paymentRoute from './routes/payment.js';
 import contactRoute from './routes/contact.js';
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+    origin: (origin, callback) => {
+        const allowed = [
+            /\.vercel\.app$/,
+            /localhost/,
+            /explainmymedicalreport\.onrender\.com$/
+        ];
+        if (!origin || allowed.some(r => r.test(origin))) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get('/', (req, res) => {

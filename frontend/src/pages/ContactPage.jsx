@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
 import { Mail, Send, User, ArrowLeft, Loader2, CheckCircle2, AlertCircle, FileUp, X, Clock } from 'lucide-react';
 import axios from 'axios';
+import API_BASE_URL from '../config';
 
 // Update with the actual path to your generated illustration
 const ILLUSTRATION_PATH = '/medical_connect_v2.png';
@@ -61,7 +62,7 @@ export default function ContactPage() {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/contact', submissionData, {
+      const response = await axios.post(`${API_BASE_URL}/api/contact`, submissionData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       if (response.data.success) {

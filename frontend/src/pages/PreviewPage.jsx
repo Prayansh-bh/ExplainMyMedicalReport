@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Lock, FileText, CheckCircle2, AlertCircle, Info, Search, XCircle, Database, FlaskConical, Quote } from 'lucide-react';
 import axios from 'axios';
+import API_BASE_URL from '../config';
 
 export default function PreviewPage() {
   const location = useLocation();
@@ -35,7 +36,7 @@ export default function PreviewPage() {
   const handlePayment = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/payment/create-order');
+      const response = await axios.post(`${API_BASE_URL}/api/payment/create-order`);
       const order = response.data.order;
 
       const options = {
@@ -46,7 +47,7 @@ export default function PreviewPage() {
         description: 'Unlock Full Report Data',
         order_id: order.id,
         handler: async (response) => {
-          await axios.post('http://localhost:5000/api/payment/verify-signature', response);
+          await axios.post(`${API_BASE_URL}/api/payment/verify-signature`, response);
           navigate('/results', { state: { report_metadata, extracted_parameters, user_requested_check, summary, disclaimer } });
         },
         theme: { color: '#2563eb' }
